@@ -45,7 +45,7 @@ def check_solution_n2(question_1, question_2, question_3, question_4, question_5
 
 
 def check_solution_n3(name, age, city, country, sentence):
-    correct_sentence = f"Hello, my name is {name}. I am {age} years old, I live in {city}, {country}."
+    correct_sentence = f"Hello, my name is {name}. I am {age} years old, and I live in {city}, {country}."
     if sentence == correct_sentence:
         return "Correct Solution"
     else:
