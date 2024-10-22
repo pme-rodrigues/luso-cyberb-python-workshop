@@ -100,29 +100,29 @@ def check_solution_n1_lab3(expression_1, expression_2, expression_3, expression_
         print("❌ Expression 9 is incorrect.")
 
     if not expression_10:
-        print("✅ Expression 9 is correct.")
+        print("✅ Expression 10 is correct.")
     else:
-        print("❌ Expression 9 is incorrect.")
+        print("❌ Expression 10 is incorrect.")
 
     if expression_11:
-        print("✅ Expression 9 is correct.")
+        print("✅ Expression 11 is correct.")
     else:
-        print("❌ Expression 9 is incorrect.")
+        print("❌ Expression 11 is incorrect.")
 
     if not expression_12:
-        print("✅ Expression 9 is correct.")
+        print("✅ Expression 12 is correct.")
     else:
-        print("❌ Expression 9 is incorrect.")
+        print("❌ Expression 12 is incorrect.")
 
     if expression_13:
-        print("✅ Expression 9 is correct.")
+        print("✅ Expression 13 is correct.")
     else:
-        print("❌ Expression 9 is incorrect.")
+        print("❌ Expression 13 is incorrect.")
 
     if expression_14:
-        print("✅ Expression 9 is correct.")
+        print("✅ Expression 14 is correct.")
     else:
-        print("❌ Expression 9 is incorrect.")
+        print("❌ Expression 14 is incorrect.")
 
 
 def check_solution_n2_lab3(expression_1, expression_2, expression_3, expression_4, expression_5, expression_6, expression_7, expression_8, expression_9):
