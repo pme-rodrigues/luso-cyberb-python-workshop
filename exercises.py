@@ -167,7 +167,7 @@ def check_solution_n2_lab3(expression_1, expression_2, expression_3, expression_
     else:
         print("❌ Expression 8 is incorrect.")
 
-    if expression_9 == -194.5:
+    if expression_9 == -192.5:
         print("✅ Expression 9 is correct.")
     else:
         print("❌ Expression 9 is incorrect.")
