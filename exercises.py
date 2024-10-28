@@ -491,4 +491,140 @@ def check_solution_n6_lab3(sentence_1, sentence_2, sentence_3, actions_count):
 
 
 
+def check_solution_n1_lab4(mystery_list, groceries_list, groceries_string):
+    # Step 1: Check the original list and length
+    if len(mystery_list) != 11:
+        print("❌ Step 1: Incorrect number of elements in the original list.")
+    else:
+        print("✅ Step 1: Original list and length are correct.")
     
+    # Step 2: Check that non-grocery items have been removed (length should be reduced by 2)
+    if len(groceries_list) != len(mystery_list) - 2:
+        print("❌ Step 2: Non-grocery items not correctly removed.")
+    else:
+        print("✅ Step 2: Non-grocery items removed correctly.")
+    
+    # Step 4: Check if duplicates have been removed
+    if len(set(groceries_list)) != len(groceries_list):
+        print("❌ Step 4: Duplicates not removed correctly.")
+    else:
+        print("✅ Step 4: Duplicates removed correctly.")
+    
+    # Step 5: Check if vegetables have been added to the list
+    if not all(veg in groceries_list for veg in ["carrot", "broccoli", "spinach"]):
+        print("❌ Step 5: Vegetables not added correctly.")
+    else:
+        print("✅ Step 5: Vegetables added correctly.")
+    
+    # Step 6: Check if the items are joined correctly into a single string
+    expected_string = ", ".join(groceries_list)
+    if groceries_string != expected_string:
+        print("❌ Step 6: Final inventory string is incorrect.")
+    else:
+        print("✅ Step 6: Final inventory string is correct.")
+
+
+def check_solution_n2_lab4(even_list, odd_list, even_middle_elements, odd_middle_element):
+    # Step 1: Check lengths
+    if len(even_list) % 2 != 0 or len(odd_list) % 2 == 0:
+        print("❌ Step 1: Lengths are incorrect. `even_list` should have an even length and `odd_list` an odd length.")
+    else:
+        print("✅ Step 1: Lengths are correct.")
+    
+    # Step 2: Check if the lists are sorted
+    if even_list != sorted(even_list):
+        print("❌ Step 2: `even_list` is not sorted correctly.")
+    else:
+        print("✅ Step 2: `even_list` is sorted correctly.")
+    
+    if odd_list != sorted(odd_list):
+        print("❌ Step 2: `odd_list` is not sorted correctly.")
+    else:
+        print("✅ Step 2: `odd_list` is sorted correctly.")
+    
+    # Step 3: Check even list middle elements
+    correct_even_middle_elements = sorted(even_list)[(len(even_list) // 2) - 1:(len(even_list) // 2) + 1]
+    if even_middle_elements != correct_even_middle_elements:
+        print("❌ Step 3: Middle elements of `even_list` are incorrect.")
+    else:
+        print("✅ Step 3: Middle elements of `even_list` are correct.")
+    
+    # Step 4: Check odd list middle element
+    correct_odd_middle_element = [sorted(odd_list)[len(odd_list) // 2]]
+    if odd_middle_element != correct_odd_middle_element:
+        print("❌ Step 4: Middle element of `odd_list` is incorrect.")
+    else:
+        print("✅ Step 4: Middle element of `odd_list` is correct.")
+
+
+def check_solution_n3_lab4(bookstore_inventory, detailed_inventory, full_inventory, book_order_mary_jane, book_order_peter_parker):
+    
+    # Step 1: Check discounted prices in `bookstore_inventory`
+    expected_prices = {
+        "The Great Gatsby": round(10.99 * 0.75, 2),
+        "1984": round(6.99 * 0.75, 2),
+        "To Kill a Mockingbird": round(8.99 * 0.75, 2),
+        "Pride and Prejudice": round(5.99 * 0.75, 2)
+    }
+    
+    for book, price in expected_prices.items():
+        if bookstore_inventory.get(book) != price:
+            print(f"❌ Step 1: Price for '{book}' is incorrect.")
+        else:
+            print(f"✅ Step 1: Price for '{book}' is correct.")
+    
+    # Step 2: Check that "Moby Dick" has been added to `bookstore_inventory`
+    if bookstore_inventory.get("Moby Dick") != 12.99:
+        print("❌ Step 2: 'Moby Dick' was not added correctly to bookstore_inventory.")
+    else:
+        print("✅ Step 2: 'Moby Dick' added correctly to bookstore_inventory.")
+    
+    # Step 3: Check `detailed_inventory` includes prices for each book
+    for book in expected_prices:
+        if detailed_inventory.get(book, {}).get("price") != expected_prices[book]:
+            print(f"❌ Step 3: Price for '{book}' in `detailed_inventory` is incorrect.")
+        else:
+            print(f"✅ Step 3: Price for '{book}' in `detailed_inventory` is correct.")
+    
+    # Step 4: Check "Moby Dick" was added to `detailed_inventory` with correct details
+    moby_dick_details = {"author": "Herman Melville", "publisher": "Harper & Brothers", "price": 12.99}
+    if detailed_inventory.get("Moby Dick") != moby_dick_details:
+        print("❌ Step 4: 'Moby Dick' details in `detailed_inventory` are incorrect.")
+    else:
+        print("✅ Step 4: 'Moby Dick' details in `detailed_inventory` are correct.")
+    
+    # Step 5: Check `full_inventory` for merged details and specific checks using `.get()`
+    if full_inventory.get("The Great Gatsby", {}).get("publisher") != "Scribner":
+        print("❌ Step 5: Publisher for 'The Great Gatsby' in `full_inventory` is incorrect.")
+    else:
+        print("✅ Step 5: Publisher for 'The Great Gatsby' in `full_inventory` is correct.")
+    
+    checks = {
+        "Moby Dick": "Herman Melville",
+        "Brave New World": "Aldous Huxley",
+        "The Metamorphosis": "The Metamorphosis is not available in the inventory.",
+        "The Lusiads": "The Lusiads is not available in the inventory."
+    }
+    
+    for title, expected in checks.items():
+        result = full_inventory.get(title, f"{title} is not available in the inventory.")
+        if result == expected or result.get("author") == expected:
+            print(f"✅ Step 5: '{title}' check is correct.")
+        else:
+            print(f"❌ Step 5: '{title}' check is incorrect.")
+    
+    # Step 6: Check `book_order_mary_jane`
+    mary_jane_titles = ["The Great Gatsby", "Pride and Prejudice"]
+    mary_jane_total_price = sum(full_inventory[title]["price"] for title in mary_jane_titles)
+    if book_order_mary_jane["titles"] == mary_jane_titles and book_order_mary_jane["total_price"] == mary_jane_total_price:
+        print("✅ Step 6: `book_order_mary_jane` is correct.")
+    else:
+        print("❌ Step 6: `book_order_mary_jane` is incorrect.")
+    
+    # Step 8: Check updated `book_order_peter_parker`
+    updated_peter_parker_titles = ["1984", "The Hobbit"]
+    updated_peter_parker_total_price = sum(full_inventory[title]["price"] for title in updated_peter_parker_titles)
+    if book_order_peter_parker["titles"] == updated_peter_parker_titles and book_order_peter_parker["total_price"] == updated_peter_parker_total_price:
+        print("✅ Step 8: Updated `book_order_peter_parker` is correct.")
+    else:
+        print("❌ Step 8: Updated `book_order_peter_parker` is incorrect.")
