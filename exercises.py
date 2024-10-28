@@ -2,6 +2,8 @@ import random
 
 random_words = ["whisper", "galaxy", "wander", "crystal", "star", "ocean", "cascade", "ember", "velocity", "eclipse"]
 
+mystery_groceries_list = ["apple", "banana", "milk", "apple", "eggs", "banana", "orange", "bread", "milk", "chair", "car"]
+
 def mistery_box(n = 3):
     
     types = list(['float', 'int', 'bool', 'str'])
@@ -20,6 +22,110 @@ def mistery_box(n = 3):
             output.append(bool(random.randint(0, 2)))
 
     return output
+
+def get_bookstore_inventory():
+    return {
+    "Brave New World": {
+        "author": "Aldous Huxley",
+        "publisher": "Chatto & Windus",
+        "price": 9.49
+    },
+    "War and Peace": {
+        "author": "Leo Tolstoy",
+        "publisher": "The Russian Messenger",
+        "price": 14.99
+    },
+    "Ulysses": {
+        "author": "James Joyce",
+        "publisher": "Sylvia Beach",
+        "price": 13.49
+    },
+    "The Odyssey": {
+        "author": "Homer",
+        "publisher": "Ancient Greek Publication",
+        "price": 11.99
+    },
+    "Crime and Punishment": {
+        "author": "Fyodor Dostoevsky",
+        "publisher": "The Russian Messenger",
+        "price": 10.49
+    },
+    "The Catcher in the Rye": {
+        "author": "J.D. Salinger",
+        "publisher": "Little, Brown and Company",
+        "price": 8.79
+    },
+    "The Lord of the Rings": {
+        "author": "J.R.R. Tolkien",
+        "publisher": "Allen & Unwin",
+        "price": 20.99
+    },
+    "The Hobbit": {
+        "author": "J.R.R. Tolkien",
+        "publisher": "Allen & Unwin",
+        "price": 7.49
+    },
+    "Harry Potter and the Philosopher's Stone": {
+        "author": "J.K. Rowling",
+        "publisher": "Bloomsbury",
+        "price": 6.99
+    },
+    "Harry Potter and the Chamber of Secrets": {
+        "author": "J.K. Rowling",
+        "publisher": "Bloomsbury",
+        "price": 7.99
+    },
+    "Frankenstein": {
+        "author": "Mary Shelley",
+        "publisher": "Lackington, Hughes, Harding, Mavor & Jones",
+        "price": 8.29
+    },
+    "Dracula": {
+        "author": "Bram Stoker",
+        "publisher": "Archibald Constable and Company",
+        "price": 9.79
+    },
+    "The Brothers Karamazov": {
+        "author": "Fyodor Dostoevsky",
+        "publisher": "The Russian Messenger",
+        "price": 15.49
+    },
+    "Anna Karenina": {
+        "author": "Leo Tolstoy",
+        "publisher": "The Russian Messenger",
+        "price": 12.49
+    },
+    "The Picture of Dorian Gray": {
+        "author": "Oscar Wilde",
+        "publisher": "Ward, Lock & Co.",
+        "price": 8.59
+    },
+    "Les Misérables": {
+        "author": "Victor Hugo",
+        "publisher": "A. Lacroix, Verboeckhoven & Cie",
+        "price": 18.99
+    },
+    "Don Quixote": {
+        "author": "Miguel de Cervantes",
+        "publisher": "Francisco de Robles",
+        "price": 11.49
+    },
+    "Jane Eyre": {
+        "author": "Charlotte Brontë",
+        "publisher": "Smith, Elder & Co.",
+        "price": 7.89
+    },
+    "Wuthering Heights": {
+        "author": "Emily Brontë",
+        "publisher": "Thomas Cautley Newby",
+        "price": 9.19
+    },
+    "Fahrenheit 451": {
+        "author": "Ray Bradbury",
+        "publisher": "Ballantine Books",
+        "price": 10.29
+    }
+    }
 
 def check_solution_n1(mistery_x, mistery_y, mistery_z, mistery_x_type, mistery_y_type, mistery_z_type):
     if (type(mistery_x) == mistery_x_type) \
