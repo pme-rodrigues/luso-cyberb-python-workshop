@@ -127,6 +127,18 @@ def get_bookstore_inventory():
     }
     }
 
+def mistery_numbers(n):
+    return [random.randint(0, 10) for i in range(n)]
+
+def mistery_employee():
+    employees = {
+    "Alice": {"base_salary": 80000, "sales": 45},
+    "Bob": {"base_salary": 60000, "sales": 78},
+    "Charlie": {"base_salary": 50000, "sales": 120},
+    "David": {"base_salary": 30000, "sales": 155}
+    }
+    return employees[random.choice(list(employees.keys()))]
+
 def check_solution_n1(mistery_x, mistery_y, mistery_z, mistery_x_type, mistery_y_type, mistery_z_type):
     if (type(mistery_x) == mistery_x_type) \
         and (type(mistery_y) == mistery_y_type) \
@@ -628,3 +640,68 @@ def check_solution_n3_lab4(bookstore_inventory, detailed_inventory, full_invento
         print("✅ Step 8: Updated `book_order_peter_parker` is correct.")
     else:
         print("❌ Step 8: Updated `book_order_peter_parker` is incorrect.")
+
+
+def check_solution_n1_lab5(employee, ubonus_percentage, utotal_bonus):
+    sales = employee['sales']
+    if 0 <= sales <= 50:
+        bonus_percentage = 0.05
+    elif 51 <= sales <= 100:
+        bonus_percentage = 0.10
+    elif 101 <= sales <= 150:
+        bonus_percentage = 0.15
+    elif sales > 150:
+        bonus_percentage = 0.20
+
+    if ubonus_percentage != bonus_percentage:
+        print("❌: The `bonus_percentage` is incorrect.")
+        return
+    
+    if utotal_bonus != bonus_percentage * employee["base_salary"]:
+        print("❌: The `total_bonus` is incorrect.")
+        return
+    print('✅ Correct Solution')
+
+
+def check_solution_n2_lab5(even_sum):
+    print('✅ Correct Solution')  if even_sum == sum([num if num % 2 == 0 else 0 for num in range(51)]) else print('❌: The `even_sum` is incorrect.')
+
+def check_solution_n3_lab5(items, reversed_list):
+    
+    print('✅ Correct Solution') if reversed_list == [[], 3.14, 'apple', True, 1] else print('❌: The `reversed_list` is incorrect.')
+
+def check_solution_n4_lab5(available_books, missing_books):
+    if available_books != ['War and Peace', 'The Odyssey', 'Ulysses']:
+        print("❌: The `available_books` is incorrect.")
+        return
+    
+    if missing_books != ['The Idiot']:
+        print("❌: The `missing_books` is incorrect.")
+        return
+    
+    print('✅ Correct Solution')
+
+def check_solution_n5_lab5(total_price):
+    if total_price != 38.45:
+        print("❌: The `total_price` is incorrect. Expected $38.45")
+    else:
+        print('✅ Correct Solution')
+
+
+def check_solution_n6_lab5(time):
+    if time != 5:
+        print("❌: The `time` is incorrect. Expected 5 days")
+    else:
+        print('✅ Correct Solution')
+
+def check_solution_n7_lab5(publishers, recommendations):
+    if sorted(publishers) != sorted(['The Russian Messenger', 'Ancient Greek Publication', 'Sylvia Beach']):
+        print("❌: The `publishers` is incorrect.")
+        return
+    
+    if sorted(recommendations) != sorted(['Crime and Punishment', 'The Brothers Karamazov', 'Anna Karenina']):
+        print("❌: The `recommendations` is incorrect.")
+        return
+    
+    print('✅ Correct Solution')
+
